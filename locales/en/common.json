@@ -1,0 +1,203 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "directory": "Directory",
+    "schemes": "Schemes",
+    "stateSchemes": "State Schemes",
+    "centralSchemes": "Central Schemes",
+    "notices": "Notices",
+    "rts": "Right to Service (RTS)",
+    "rti": "RTI",
+    "language": "Language",
+    "english": "English",
+    "marathi": "मराठी"
+  },
+  "about": {
+    "title": "About Us",
+    "introduction": {
+      "title": "Introduction",
+      "content1": "The Rural Development Department was established on 1 May 1960. Rural Development Department of Maharashtra is working for overall development of rural areas. Nationalist villages should be autonomous, all facilities should be available, clean, beautiful and green villages to carry out various activities.",
+      "content2": "Maharashtra State Rural Life Mission carries out poverty alleviation activities, provides shelter facilities, and training to empower people and strengthen Panchayati governance.",
+      "content3": "At the Ministry level, Hon'ble Minister, Hon'ble Minister of State, and Hon. Additional Chief Secretary lead the department. It oversees 34 district councils, 351 panchayats, and 28,000 gram panchayats across Maharashtra."
+    },
+    "visionMission": {
+      "title": "Vision & Mission",
+      "items": [
+        "Create clean, beautiful and green villages.",
+        "Undertake poverty alleviation through Maharashtra State Rural Jeevanonnati Abhiyan.",
+        "Provide shelter and housing facilities under Indira Awas Yojana.",
+        "Strengthen Panchayati Raj system through empowerment and training."
+      ]
+    },
+    "objectivesFunctions": {
+      "title": "Objectives & Functions",
+      "objectives": {
+        "title": "Objectives",
+        "items": [
+          "Implement initiatives to create sustainable rural development.",
+          "Provide housing under Pradhan Mantri Gramin Awaas Yojana.",
+          "Empower Panchayati Raj System through training programs."
+        ]
+      },
+      "functions": {
+        "title": "Functions",
+        "items": [
+          "Implement Integrated and Sustainable Rural Development Policy 2023–28.",
+          "Provide subsidies and monitor rural development programs.",
+          "Oversee Panchayat Raj system functioning.",
+          "Adopt IT tools for transparent and paperless governance.",
+          "Promote flagship programs and women's empowerment initiatives."
+        ]
+      }
+    },
+    "rolesResponsibilities": {
+      "title": "Roles & Responsibilities",
+      "items": [
+        "Formulate and implement rural development policies and schemes.",
+        "Strengthen Gram Panchayats as units of self-governance.",
+        "Coordinate with Zilla Parishads and Panchayat Samitis for program execution.",
+        "Monitor and evaluate development projects at village level.",
+        "Ensure transparency, accountability, and citizen participation in governance."
+      ]
+    },
+    "keyAchievements": {
+      "title": "Key Achievements",
+      "items": [
+        "Successfully implemented the Pradhan Mantri Gramin Awaas Yojana providing housing to rural poor.",
+        "Achieved significant progress in sanitation under Swachh Bharat Mission in villages.",
+        "Launched skill development initiatives for rural youth and women.",
+        "Improved infrastructure in rural areas including roads, water supply, and electrification.",
+        "Digitized Panchayati Raj processes to ensure efficiency and transparency."
+      ]
+    }
+  },
+  "directory": {
+    "title": "Directory",
+    "membersDirectory": {
+      "title": "Members Directory",
+      "subtitle": "Gram Panchayat Members Information"
+    },
+    "schemes": {
+      "title": "Active Government Schemes",
+      "subtitle": "List of current schemes with benefits and descriptions"
+    },
+    "samiti": {
+      "title": "Committees (Samiti)",
+      "subtitle": "List of committees with member details"
+    },
+    "member": {
+      "designation": "Designation",
+      "birthDate": "Birth Date",
+      "contact": "Contact",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "scheme": {
+      "benefits": "Benefits",
+      "description": "Description",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "committee": {
+      "chairperson": "Chairperson",
+      "members": "Members",
+      "purpose": "Purpose"
+    }
+  },
+  "notices": {
+    "title": "Notices",
+    "subtitle": "Important announcements and notices from the department",
+    "uploadNotice": "Upload New Notice",
+    "sortBy": "Sort by",
+    "date": "Date",
+    "title_sort": "Title",
+    "type": "Type",
+    "all": "All",
+    "announcement": "Announcement",
+    "tender": "Tender",
+    "circular": "Circular",
+    "order": "Order",
+    "download": "Download",
+    "view": "View",
+    "upload": "Upload",
+    "selectFile": "Select File",
+    "fileType": "File Type",
+    "pdf": "PDF",
+    "image": "Image",
+    "noticeTitle": "Notice Title",
+    "noticeDescription": "Notice Description",
+    "publishDate": "Publish Date",
+    "expiryDate": "Expiry Date",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "recent": "Recent",
+    "oldest": "Oldest",
+    "noNotices": "No notices found",
+    "searchPlaceholder": "Search notices..."
+  },
+  "home": {
+    "banner": {
+      "centralSchemes": "Central Schemes",
+      "pradhanMantriGramSadak": "Pradhan Mantri Gram Sadak Yojana"
+    },
+    "newsTicker": {
+      "news": "News",
+      "content": "Regarding making a panel for appointment of retired Deputy Engineer for Maharashtra Road Development Organization under Chief Minister Gram Sadak Yojana"
+    },
+    "aboutEvents": {
+      "aboutUs": {
+        "title": "About Us",
+        "content": "Our Gram Panchayat works towards the development and welfare of the village community. With transparency and people's participation, we aim to provide essential services, implement government schemes, and promote rural development.",
+        "readMore": "Read More"
+      },
+      "recentEvents": {
+        "title": "Recent Events",
+        "viewAllEvents": "View All Events"
+      },
+      "eventAlt": {
+        "culturalProgram": "Cultural Program",
+        "villageMeeting": "Village Meeting",
+        "treePlantation": "Tree Plantation",
+        "developmentWork": "Development Work"
+      }
+    },
+    "members": {
+      "title": "Grampanchayat Body Members",
+      "members": [
+        {
+          "name": "Shri. Devendra Fadnavis",
+          "designation": "Hon'ble Chief Minister"
+        },
+        {
+          "name": "Shri. Eknath Shinde",
+          "designation": "Hon'ble Deputy Chief Minister"
+        },
+        {
+          "name": "Shri. Ajit Pawar",
+          "designation": "Hon'ble Deputy Chief Minister"
+        },
+        {
+          "name": "Shri. Jayakumar Gore",
+          "designation": "Hon'ble Minister, Rural Development and Panchayat Raj"
+        },
+        {
+          "name": "Shri. Yogesh Kadam",
+          "designation": "Hon'ble Minister of State, Rural Development and Panchayat Raj"
+        },
+        {
+          "name": "Shri. Eknath Dawale",
+          "designation": "Principal Secretary, Rural Development and Panchayat Raj"
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Gram Panchayat Gallery",
+      "altText": "Gallery Image"
+    }
+  }
+}
+
+
+
