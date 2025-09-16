@@ -12,7 +12,8 @@ import {
   Menu,
   X,
   Home,
-  Calendar
+  Calendar,
+  Shield
 } from "lucide-react";
 
 const sidebarSections = [
@@ -69,6 +70,12 @@ const sidebarSections = [
         href: "/admin/notices",
         icon: Megaphone,
         description: "Announcements & notices"
+      },
+      {
+        name: "RTS Documents",
+        href: "/admin/rts-documents",
+        icon: Shield,
+        description: "RTS forms & documents"
       }
     ]
   },

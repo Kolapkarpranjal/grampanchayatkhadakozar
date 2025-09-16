@@ -9,7 +9,7 @@ import mr from "../../../locales/mr/common.json";
 
 export default function DirectoryPage() {
   const params = useParams();
-  const lang = params?.lang as string;
+  const lang = params?.lang as string || 'mr';
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDivision, setSelectedDivision] = useState("All");
 
@@ -17,238 +17,126 @@ export default function DirectoryPage() {
   let t: any = en;
   if (lang === "mr") t = mr;
 
-  t = t.directory; // focus on directory section
+  const directoryT = t.directory; // focus on directory section
 
-  // Gram Panchayat Level Data
+  // Gram Panchayat Level Data with translations
   const gramPanchayatData = [
     {
-      division: "Gram Panchayat Khadak Ozar - Local Administration",
+      division: directoryT.committees.gramPanchayat,
       officials: [
         {
-          name: "Shri. Rajesh Patil",
-          designation: "Sarpanch",
-          email: "sarpanch.khadakozar@maharashtra.gov.in",
-          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra"
+          name: directoryT.members.gramPanchayat.sagarVasantraoPagar,
+          designation: directoryT.designations.sarpanch,
+          email: "sagar.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 21/05/1997 | Education: B.A. | Mobile: 8805815671"
         },
         {
-          name: "Smt. Sunita Pawar",
-          designation: "Upa-Sarpanch",
-          email: "upasarpanch.khadakozar@maharashtra.gov.in",
-          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra"
+          name: directoryT.members.gramPanchayat.govindTulshiramPagar,
+          designation: directoryT.designations.deputySarpanch,
+          email: "govind.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 30/08/1994 | Education: S.S.C. (10th Pass) | Mobile: 8805815671"
         },
         {
-          name: "Shri. Vijay More",
-          designation: "Panchayat Member (Ward 1)",
-          email: "vijay.more@khadakozar.gov.in",
-          address: "Ward 1, Khadak Ozar, Taluka: Nashik, District: Nashik"
+          name: directoryT.members.gramPanchayat.harshadJanardanPagar,
+          designation: directoryT.designations.member,
+          email: "harshad.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 28/07/1995 | Education: B.E. (Civil Engineering) | Mobile: 8806018793"
         },
         {
-          name: "Smt. Meera Jadhav",
-          designation: "Panchayat Member (Ward 2)",
-          email: "meera.jadhav@khadakozar.gov.in",
-          address: "Ward 2, Khadak Ozar, Taluka: Nashik, District: Nashik"
+          name: directoryT.members.gramPanchayat.devidasTatyabaPagar,
+          designation: directoryT.designations.member,
+          email: "devidas.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 07/10/1984 | Education: B.Com. | Mobile: 9518357405"
         },
         {
-          name: "Shri. Prakash Shinde",
-          designation: "Panchayat Member (Ward 3)",
-          email: "prakash.shinde@khadakozar.gov.in",
-          address: "Ward 3, Khadak Ozar, Taluka: Nashik, District: Nashik"
+          name: directoryT.members.gramPanchayat.sharadRamchandraBhavar,
+          designation: directoryT.designations.member,
+          email: "sharad.bhavar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 01/06/1981 | Education: F.Y. (First Year of Graduation) | Mobile: 9545347626"
         },
         {
-          name: "Smt. Kavita Patil",
-          designation: "Panchayat Member (Ward 4)",
-          email: "kavita.patil@khadakozar.gov.in",
-          address: "Ward 4, Khadak Ozar, Taluka: Nashik, District: Nashik"
+          name: directoryT.members.gramPanchayat.shivajiChindhuGhodhade,
+          designation: directoryT.designations.member,
+          email: "shivaji.ghodhade@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 21/09/1994 | Education: H.S.C. (12th Pass) | Mobile: 9359410216"
+        },
+        {
+          name: directoryT.members.gramPanchayat.sarikaAshokPagar,
+          designation: directoryT.designations.femaleMember,
+          email: "sarika.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 05/07/1989 | Education: S.S.C. (10th Pass) | Mobile: 9834763723"
+        },
+        {
+          name: directoryT.members.gramPanchayat.ratnaAtmaramPagar,
+          designation: directoryT.designations.femaleMember,
+          email: "ratna.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 12/02/1990 | Education: S.S.C. (10th Pass) | Mobile: 7620913417"
+        },
+        {
+          name: directoryT.members.gramPanchayat.sonaliSunilBhavar,
+          designation: directoryT.designations.femaleMember,
+          email: "sonali.bhavar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 10/06/1989 | Education: H.S.C. (12th Pass) | Mobile: 9850261067"
+        },
+        {
+          name: directoryT.members.gramPanchayat.arunaKhanderaoPagar,
+          designation: directoryT.designations.femaleMember,
+          email: "aruna.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 16/04/1988 | Education: F.Y.J.C. (First Year Junior College – 11th) | Mobile: 9373225120"
+        },
+        {
+          name: directoryT.members.gramPanchayat.laxmibaiChahaduSuryawanshi,
+          designation: directoryT.designations.femaleMember,
+          email: "laxmibai.suryawanshi@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: — | Education: — | Mobile: 8805370716"
+        },
+        {
+          name: directoryT.members.gramPanchayat.priyankaShivanathKedare,
+          designation: directoryT.designations.femaleMember,
+          email: "priyanka.kedare@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 24/03/1996 | Education: S.S.C. (10th Pass) | Mobile: 9822827919"
+        }
+      ]
+    },
+    {
+      division: directoryT.committees.executiveCommittee,
+      officials: [
+        {
+          name: directoryT.members.executiveCommittee.roshanBalwantSuryavanshi,
+          designation: directoryT.designations.gramPanchayatOfficer,
+          email: "roshan.suryavanshi@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 03/04/1988 | Education: Agricultural Diploma | Mobile: 8275586264"
+        },
+        {
+          name: directoryT.members.executiveCommittee.sushilRajendraKedare,
+          designation: directoryT.designations.computerOperator,
+          email: "sushil.kedare@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 30/08/1994 | Education: HSC | Mobile: 8850366248"
+        },
+        {
+          name: directoryT.members.executiveCommittee.ganeshKeduPagar,
+          designation: directoryT.designations.clerkVasuliKarkun,
+          email: "ganesh.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 27/09/1993 | Education: HSC | Mobile: 9764268193"
+        },
+        {
+          name: directoryT.members.executiveCommittee.kailasRamdasPagar,
+          designation: directoryT.designations.gramRojgarSahayak,
+          email: "kailas.pagar@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 28/12/1995 | Education: HSC | Mobile: 8805815671"
+        },
+        {
+          name: directoryT.members.executiveCommittee.sahebraoNivrittiKank,
+          designation: directoryT.designations.waterSupplyEmployee,
+          email: "sahebrao.kank@khadakozar.gov.in",
+          address: "Khadak Ozar, Taluka: Nashik, District: Nashik, Maharashtra | DOB: 28/06/1986 | Education: SSC | Mobile: 8010045761"
         }
       ]
     }
   ];
 
-  // Official data from Maharashtra Rural Development & Panchayat Raj Department
-  const officialsData = [
-    {
-      division: "Rural Development and Panchayat Raj Department PS Office",
-      officials: [
-        {
-          name: "Mr. Eknath Dawle (I.A.S.)",
-          designation: "Principal Secretary, Rural Development and Panchayat Raj Department",
-          email: "sec[dot]rdd[at]maharashtra[dot]gov[dot]in",
-          address: "7th Floor, Construction Building, 25 Marzban Path, Fort, Mumbai 400001"
-        }
-      ]
-    },
-    {
-      division: "Maharashtra State Rural Development Mission",
-      officials: [
-        {
-          name: "Mr. Nilesh Sagar (I.A.S.)",
-          designation: "Chief Executive Officer (Maharashtra State Rural Livelihood Improvement Mission)",
-          email: "ceo[at]umed[dot]in",
-          address: "5th Floor, CIDCO Bhavan (South Wing) CBD Belapur, Navi Mumbai-400614"
-        }
-      ]
-    },
-    {
-      division: "Maharashtra Rural Development Association Office (MRRDA)",
-      officials: [
-        {
-          name: "Mr. Satish M. Chikhlikar",
-          designation: "Secretary (Chief Minister Gram Road Scheme)",
-          email: "secycmpmgsy-rdd[at]mah[dot]gov[dot]in",
-          address: "5th Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        }
-      ]
-    },
-    {
-      division: "State Rural Development and Panchayat Raj Deputy Secretariate Office",
-      officials: [
-        {
-          name: "Mr. K. G. Valvi",
-          designation: "Joint Secretary (Bandhkam-3) (Aastha-1,Aastha-2 & Scheme 6)",
-          email: "est[dot]rdd[at]maharashtra[dot]gov[dot]in",
-          address: "7th Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. V. M. Bharose",
-          designation: "Joint Secretary Central Scheme",
-          email: "varsha[dot]bharose[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. Prashant V. Patil",
-          designation: "Deputy Secretary (PMGSY & MMGSY)",
-          email: "dspmgsy[dot]rdd[at]maharashtra[dot]gov[dot]in",
-          address: "5th Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. Subhash Ingale",
-          designation: "Deputy Secretary ( M. D. S )",
-          email: "mds[dot]rdd[at]maharashtra[dot]gov[dot]in",
-          address: "3rd Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. Vinod Bondre",
-          designation: "Deputy Secretary (Panchayat Raj)",
-          email: "dspara[dot]rdd-mh[at]gov[dot]in",
-          address: "Ground Floor, A-Wing, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. N.S. Rande",
-          designation: "Deputy Secretary (Zilla Parishad Establishment)",
-          email: "neela[dot]ranade[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. Seema B. Jadhav",
-          designation: "Deputy Secretary (Treasury & Registration Branch)",
-          email: "seema[dot]jadhav[at]nic[dot]in",
-          address: "Ground Floor, A-Wing, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. R. B. Linganwad",
-          designation: "Deputy Secretary/Deputy Director Finance",
-          email: "ravikumar[dot]linganwad[at]gov[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        }
-      ]
-    },
-    {
-      division: "State Rural Development and Panchayat of Under Secretary Office",
-      officials: [
-        {
-          name: "Mr. P. V. Babar",
-          designation: "Under Secretary",
-          email: "parmeshwarv[dot]babar[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. A. V. Shinde",
-          designation: "Under Secretary",
-          email: "sopr5[dot]rdd-mh[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. U. V. Joshi",
-          designation: "Under Secretary",
-          email: "urmila[dot]joshi[at]nic[dot]in",
-          address: "3rd Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. N. K. Kudal",
-          designation: "Under Secretary",
-          email: "narayan[dot]kudal[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. S. M. Kholgadge",
-          designation: "Under Secretary",
-          email: "sangeeta[dot]kholgadge[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. V. A. Daingade",
-          designation: "Under Secretary",
-          email: "aoyoj2[dot]rdd-mh[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. B. M. Asole",
-          designation: "Under Secretary",
-          email: "sopr2[dot]rdd-mh[at]nic[dot]in",
-          address: "Ground Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. S. K. Ghotale",
-          designation: "Under Secretary",
-          email: "supriya[dot]ghotale[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Mr. Prashant A. Doke",
-          designation: "Under Secretary",
-          email: "prashant[dot]doke[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. S. G. Lande",
-          designation: "Under Secretary",
-          email: "sangita[dot]lande[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        },
-        {
-          name: "Smt. S. S. Gawas",
-          designation: "Under Secretary",
-          email: "Sandhya[dot]gawas[at]nic[dot]in",
-          address: "1st Floor, Bandhkam Bhavan, 25 Marzban Path, Fort, Mumbai 400001"
-        }
-      ]
-    },
-    {
-      division: "State Directorate of State Rural Development and Panchayatraj Office",
-      officials: [
-        {
-          name: "Mr. Girish Bhalerao",
-          designation: "Director (Panchayat Raj)",
-          email: "spdrgsa[dot]maharashtra[at]mah[dot]gov[dot]in",
-          address: "A-9, Shivsagar Apartment, Modibagh, Ganeshkhind Road, Shivajinagar, Pune, Maharashtra 411005"
-        }
-      ]
-    },
-    {
-      division: "State Management Unit - Rural Housing",
-      officials: [
-        {
-          name: "Mr. Rajaram Dighe",
-          designation: "Director (State Management Unit-Rural Housing)",
-          email: "directoriayruralhousing[at]gmail[dot]com",
-          address: "4th Floor, CIDCO Bhawan – South Division, CBD Belapur, Navi Mumbai- 400614 Maharashtra."
-        }
-      ]
-    }
-  ];
-
-  // Combine all data
-  const allData = [...gramPanchayatData, ...officialsData];
+  // Use only Gram Panchayat data (removed state-level officials)
+  const allData = gramPanchayatData;
   const divisions = ["All", ...allData.map(item => item.division)];
 
   // Filter officials data
@@ -268,22 +156,22 @@ export default function DirectoryPage() {
         {/* Header matching the screenshot */}
         <div className="mb-8">
           <nav className="text-sm text-gray-600 mb-4">
-            <span className="text-gray-900 font-semibold">Directory</span>
+            <span className="text-gray-900 font-semibold">{directoryT.title}</span>
           </nav>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Who&apos;s Who</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">{directoryT.pageTitle}</h1>
         </div>
-
-        {/* Filter Section with new color scheme */}
+        
+        {/* Filter Section with green color scheme */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 text-sm font-medium rounded-lg shadow-md">
-              Filter Who&apos;s Who divisions wise
-            </div>
+            <div className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 text-sm font-medium rounded-lg shadow-md">
+              {directoryT.filterText}
+                </div>
             <div className="flex-1">
               <select
                 value={selectedDivision}
                 onChange={(e) => setSelectedDivision(e.target.value)}
-                className="w-full max-w-md px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                className="w-full max-w-md px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200"
               >
                 {divisions.map((division) => (
                   <option key={division} value={division}>
@@ -294,11 +182,11 @@ export default function DirectoryPage() {
             </div>
             <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2 font-medium flex items-center gap-2 transition-all duration-200 rounded-lg shadow-md">
               <Search className="w-4 h-4" />
-              Filter
+              {directoryT.filterButton}
             </button>
-          </div>
         </div>
-
+        </div>
+        
         {/* Officials Tables with new color scheme */}
         <div className="space-y-6">
           {filteredData.map((division, divisionIndex) => (
@@ -312,26 +200,22 @@ export default function DirectoryPage() {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
-                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Name</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Designation</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Email</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">Address</th>
+                    <tr className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">{directoryT.tableHeaders.name}</th>
+                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">{directoryT.tableHeaders.designation}</th>
+                      <th className="border border-gray-200 px-4 py-3 text-left font-semibold">{directoryT.tableHeaders.address}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {division.officials.map((official, index) => (
-                      <tr key={index} className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-200">
+                      <tr key={index} className="hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-200">
                         <td className="border border-gray-200 px-4 py-3 text-gray-800 font-medium">
                           {official.name}
                         </td>
                         <td className="border border-gray-200 px-4 py-3 text-gray-700">
-                          <span className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                          <span className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
                             {official.designation}
                           </span>
-                        </td>
-                        <td className="border border-gray-200 px-4 py-3 text-indigo-600 hover:underline cursor-pointer hover:text-indigo-800 transition-colors duration-200">
-                          {official.email}
                         </td>
                         <td className="border border-gray-200 px-4 py-3 text-gray-600 text-sm">
                           {official.address}
@@ -347,14 +231,14 @@ export default function DirectoryPage() {
 
         {filteredData.length === 0 && (
           <div className="text-center py-16">
-            <div className="w-20 h-20 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Search className="h-10 w-10 text-indigo-500" />
+            <div className="w-20 h-20 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Search className="h-10 w-10 text-green-500" />
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">No Officials Found</h3>
-            <p className="text-gray-600">Try adjusting your search terms or filter options.</p>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{directoryT.noOfficialsFound}</h3>
+            <p className="text-gray-600">{directoryT.noOfficialsMessage}</p>
           </div>
         )}
-      </div>
+        </div>
     </div>
   );
 }

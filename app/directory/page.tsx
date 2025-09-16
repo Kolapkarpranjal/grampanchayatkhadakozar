@@ -254,35 +254,35 @@ export default function DirectoryPage() {
               </div>
               
               {/* Table */}
-              <div className="overflow-x-auto">
+                <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
-                  <thead>
+                    <thead>
                     <tr className="bg-orange-500 text-white">
                       <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Name</th>
                       <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Designation</th>
                       <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Email</th>
                       <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Address</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {division.officials.map((official, index) => (
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {division.officials.map((official, index) => (
                       <tr key={index} className="hover:bg-gray-50">
                         <td className="border border-gray-300 px-4 py-3 text-gray-800 font-medium">
                           {official.name}
-                        </td>
+                          </td>
                         <td className="border border-gray-300 px-4 py-3 text-gray-700">
                           {official.designation}
-                        </td>
+                          </td>
                         <td className="border border-gray-300 px-4 py-3 text-blue-600 hover:underline cursor-pointer">
                           {official.email}
-                        </td>
+                          </td>
                         <td className="border border-gray-300 px-4 py-3 text-gray-600 text-sm">
                           {official.address}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
               </div>
             </div>
           ))}

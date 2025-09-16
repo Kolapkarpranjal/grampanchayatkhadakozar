@@ -6,104 +6,417 @@
     "schemes": "Schemes",
     "stateSchemes": "State Schemes",
     "centralSchemes": "Central Schemes",
+    "events": "Events",
+    "samiti": "Samiti",
+    "shaleySamiti": "Shaley Vyavasthapan Samiti",
+    "janArogyaSamiti": "Jan Arogya Samiti (Public Health Committee)",
+    "gallery": "Gallery",
     "notices": "Notices",
     "rts": "Right to Service (RTS)",
     "rti": "RTI",
+    "digital": "Digital Grampanchayat",
     "language": "Language",
     "english": "English",
     "marathi": "मराठी"
   },
-  "about": {
-    "title": "About Us",
-    "introduction": {
-      "title": "Introduction",
-      "content1": "The Rural Development Department was established on 1 May 1960. Rural Development Department of Maharashtra is working for overall development of rural areas. Nationalist villages should be autonomous, all facilities should be available, clean, beautiful and green villages to carry out various activities.",
-      "content2": "Maharashtra State Rural Life Mission carries out poverty alleviation activities, provides shelter facilities, and training to empower people and strengthen Panchayati governance.",
-      "content3": "At the Ministry level, Hon'ble Minister, Hon'ble Minister of State, and Hon. Additional Chief Secretary lead the department. It oversees 34 district councils, 351 panchayats, and 28,000 gram panchayats across Maharashtra."
-    },
-    "visionMission": {
-      "title": "Vision & Mission",
-      "items": [
-        "Create clean, beautiful and green villages.",
-        "Undertake poverty alleviation through Maharashtra State Rural Jeevanonnati Abhiyan.",
-        "Provide shelter and housing facilities under Indira Awas Yojana.",
-        "Strengthen Panchayati Raj system through empowerment and training."
-      ]
-    },
-    "objectivesFunctions": {
-      "title": "Objectives & Functions",
+  "digitalGrampanchayat": {
+    "title": "Digital Grampanchayat",
+    "subtitle": "A mission to deliver transparent, efficient and citizen-friendly services using technology.",
+    "sections": {
+      "vision": {
+        "title": "Vision",
+        "desc": "Build a digitally-enabled Gram Panchayat where every citizen can access services online, track requests, and engage with the local administration easily."
+      },
       "objectives": {
         "title": "Objectives",
         "items": [
-          "Implement initiatives to create sustainable rural development.",
-          "Provide housing under Pradhan Mantri Gramin Awaas Yojana.",
-          "Empower Panchayati Raj System through training programs."
+          "Online access to certificates and applications",
+          "Transparent service tracking and updates",
+          "Digitized records and paperless governance",
+          "Citizen engagement through announcements and feedback"
         ]
       },
-      "functions": {
-        "title": "Functions",
+      "services": {
+        "title": "Digital Services",
         "items": [
-          "Implement Integrated and Sustainable Rural Development Policy 2023–28.",
-          "Provide subsidies and monitor rural development programs.",
-          "Oversee Panchayat Raj system functioning.",
-          "Adopt IT tools for transparent and paperless governance.",
-          "Promote flagship programs and women's empowerment initiatives."
+          "Online certificates (Birth/Death/Residence)",
+          "Notices and announcements portal",
+          "RTS services and downloadable forms",
+          "Online grievance and feedback",
+          "Digital payments (coming soon)",
+          "Service tracking dashboard"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "office": "Office",
+        "officeValue": "Gram Panchayat Khadak Ozar",
+        "email": "Email",
+        "emailValue": "info@khadakozar.gov.in",
+        "phone": "Phone",
+        "phoneValue": "+91-XXXXXXXXXX",
+        "hours": "Hours",
+        "hoursValue": "Mon-Fri, 10:00 AM - 6:00 PM"
+      }
+    }
+  },
+  "about": {
+    "title": "About Our Village",
+    "imageAlt": "Khadak Ozar Gram Panchayat",
+    "villageOverview": {
+      "title": "Khadak Ozar Village - A Glimpse",
+      "description": "Khadak Ozar Gram Panchayat is a rural self-governance institution under Nashik District Council, Chandwad Panchayat Samiti. The village has a population of 3487, with Khadak Ozar being the main village and Gurhale settlement being independently located."
+    },
+    "statistics": {
+      "title": "Village Area",
+      "items": [
+        { "value": "1022.85 sq km", "label": "Gram Panchayat Area" },
+        { "value": "4", "label": "Wards" },
+        { "value": "673", "label": "Family Count" },
+        { "value": "1784", "label": "Male Population" },
+        { "value": "1703", "label": "Female Population" },
+        { "value": "3487", "label": "Total Population" }
+      ]
+    },
+    "facilities": {
+      "title": "Village Facilities",
+      "categories": [
+        {
+          "title": "Education",
+          "items": [
+            "Z.P. Marathi School Khadak Ozar (Class 1 to 7)",
+            "Z.P. Marathi School Gurhale",
+            "Secondary School Khadak Ozar (Class 5 to 10)"
+          ]
+        },
+        {
+          "title": "Health",
+          "items": [
+            "Health Sub-Center – 01",
+            "Anganwadi Centers – 5 (1 Khadak Ozar, 2 Dr. Babasaheb Ambedkar Nagar, 3 Jambhlicha Malla & 4 Vishnuwadi 5 Gurhale)"
+          ]
+        },
+        {
+          "title": "Water Supply",
+          "items": [
+            "Individual tap connections for families under 'Har Ghar Jal Har Ghar Nal'",
+            "R.O. ATM facility"
+          ]
+        },
+        {
+          "title": "Other Facilities",
+          "items": [
+            "Weather Center: Weather information available on mobile in the village",
+            "Telephone facility and internet connectivity available",
+            "Social Hall: 3 social halls in the village where public programs, weddings, annual rituals, religious ceremonies take place",
+            "Cremation ground shed, death ritual shed available",
+            "CCTV: CCTV cameras installed throughout the village and under surveillance",
+            "Gymnasium: Independent gymnasium building available in Khadak Ozar village",
+            "Public playground: Independent ground for cricket and other sports in the village",
+            "Aaple Sarkar Service Center - Setu Center: A Setu center in Khadak Ozar village providing documents and online facilities at one place"
+          ]
+        }
+      ]
+    },
+    "distance": {
+      "title": "Distance",
+      "items": [
+        { "location": "From Nashik", "distance": "50 km" },
+        { "location": "From Chandwad", "distance": "20 km" },
+        { "location": "Nearest Railway Station: Kundewadi", "distance": "26 km" },
+        { "location": "Nashik Road", "distance": "50 km" },
+        { "location": "Ozar Airport", "distance": "36 km" }
+      ]
+    },
+    "agriculture": {
+      "title": "Land Agriculture Area",
+      "landInfo": {
+        "title": "Land Information",
+        "items": [
+          { "label": "Total Village Area", "value": "448.14 Hectares" },
+          { "label": "Irrigated Area", "value": "370.25" },
+          { "label": "Non-irrigated Area", "value": "28.00" },
+          { "label": "Number of Landholders", "value": "498" },
+          { "label": "Total Area", "value": "394.37 Hectares" },
+          { "label": "Village Settlement Area", "value": "3.39 Hectares" },
+          { "label": "Cultivable Area", "value": "354.11 Hectares" },
+          { "label": "Average Annual Rainfall", "value": "1000 mm" }
+        ]
+      },
+      "crops": {
+        "title": "Main Crops",
+        "items": [
+          "Grapes, sugarcane, pomegranate, onion, tomato, capsicum and vegetable crops",
+          "Large scale grape orchards in the village",
+          "Solar dryers for women entrepreneurship development"
         ]
       }
     },
-    "rolesResponsibilities": {
-      "title": "Roles & Responsibilities",
+    "attractions": {
+      "title": "Tourist Attractions",
+      "places": [
+        {
+          "name": "Kedrai Mata Dam",
+          "description": "Kedrai Mata Dam is a dam located near Khadak Ozar village in Chandwad taluka of Nashik district, built on Vinta river and famous for Kedrai Mata temple. The awakened deity of Mother Kedrai is located near this dam. This dam provides water supply to villages in the surrounding area.",
+          "features": {
+            "title": "Dam and Surroundings",
+            "items": [
+              "Location: Kedrai Mata Dam is located in Chandwad taluka of Nashik district, near Khadak Ozar village",
+              "River: This dam is built on Vinta river",
+              "Reason for Fame: Due to being near the temple, this dam is named Kedrai Mata Dam",
+              "Water Supply: This dam provides water supply as a water carrier to Jopul, Khadak Ozar, Wadali Bhoi and surrounding villages in the five kos area"
+            ]
+          }
+        },
+        {
+          "name": "Kedrai Mata Temple Khadak Ozar",
+          "description": "Famous Kedrai Mata is an awakened deity located about two kilometers from Khadak Ozar village in Chandwad taluka. This deity is located 6 km from Wadali Bhoi village near Mumbai-Agra National Highway No. 3. There is huge crowd here on full moon, new moon, Tuesday, Friday and Sunday.",
+          "features": {
+            "title": "Special Features",
       "items": [
-        "Formulate and implement rural development policies and schemes.",
-        "Strengthen Gram Panchayats as units of self-governance.",
-        "Coordinate with Zilla Parishads and Panchayat Samitis for program execution.",
-        "Monitor and evaluate development projects at village level.",
-        "Ensure transparency, accountability, and citizen participation in governance."
+              "There is a belief among devotees since ancient times that if couples cannot have children, taking a bath seven times in the holy pond here fulfills their wishes",
+              "This goddess is famous for fulfilling vows",
+              "Ancient temples of Shani, Rahu, Ketu are located near Kedrai Mata temple",
+              "Four-faced Hanuman idol in front is very beautiful and there is a Shivalinga in the nearby temple",
+              "Ancient lamp tower can be seen on the hill in front. It should be from Shivaji's era",
+              "Banyan and Peepal trees in the temple premises add to the glory of the deity",
+              "This deity located on the banks of Vinta river is very peaceful, beautiful and pleasant"
+            ]
+          }
+        }
       ]
     },
-    "keyAchievements": {
-      "title": "Key Achievements",
+    "specialFeatures": {
+      "title": "Special Features",
       "items": [
-        "Successfully implemented the Pradhan Mantri Gramin Awaas Yojana providing housing to rural poor.",
-        "Achieved significant progress in sanitation under Swachh Bharat Mission in villages.",
-        "Launched skill development initiatives for rural youth and women.",
-        "Improved infrastructure in rural areas including roads, water supply, and electrification.",
-        "Digitized Panchayati Raj processes to ensure efficiency and transparency."
+        "Kedrai Mata is famous as an awakened deity in Khadak Ozar village in Chandwad taluka of Nashik district in Maharashtra state",
+        "Continuous Hari Naam Saptah has been running in the village for the last 90 years and this year in April 2025, it will complete 90 years continuously and we will celebrate the golden jubilee in another 10 years",
+        "Khadak Ozar - A small but ideal, prosperous, and historically heritage-preserving village!"
+      ]
+    },
+    "officials": {
+      "title": "Honorable Gram Panchayat Officials",
+      "dob": "Date of Birth",
+      "education": "Education",
+      "mobile": "Mobile No.",
+      "position": "Position",
+      "members": [
+        {
+          "name": "Sagar Vasantrao Pagar",
+          "dob": "21/05/1997",
+          "education": "BA",
+          "mobile": "8805815671",
+          "position": "Sarpanch"
+        },
+        {
+          "name": "Govind Tulshiram Pagar",
+          "dob": "30/08/1994",
+          "education": "SSC",
+          "mobile": "8805815671",
+          "position": "Deputy Sarpanch"
+        },
+        {
+          "name": "Harshad Janardan Pagar",
+          "dob": "28/07/1995",
+          "education": "BE (CIVIL)",
+          "mobile": "8806018793",
+          "position": "Member"
+        },
+        {
+          "name": "Sharad Ramchandra Bhavar",
+          "dob": "01/06/1981",
+          "education": "FY",
+          "mobile": "9545347626",
+          "position": "Member"
+        },
+        {
+          "name": "Shivaji Chindhu Ghodhade",
+          "dob": "21/09/1994",
+          "education": "HSC",
+          "mobile": "9359410216",
+          "position": "Member"
+        },
+        {
+          "name": "Sarika Ashok Pagar",
+          "dob": "05/07/1989",
+          "education": "SSC",
+          "mobile": "9834763723",
+          "position": "Female Member"
+        },
+        {
+          "name": "Ratna Atmaram Pagar",
+          "dob": "12/02/1990",
+          "education": "SSC",
+          "mobile": "7620913417",
+          "position": "Female Member"
+        },
+        {
+          "name": "Sonali Sunil Bhavar",
+          "dob": "10/06/1989",
+          "education": "HSC",
+          "mobile": "9850261067",
+          "position": "Female Member"
+        },
+        {
+          "name": "Aruna Khanderao Pagar",
+          "dob": "16/04/1988",
+          "education": "FYJC",
+          "mobile": "9373225120",
+          "position": "Female Member"
+        },
+        {
+          "name": "Laxmibai Chahadu Suryawanshi",
+          "dob": "",
+          "education": "",
+          "mobile": "8805370716",
+          "position": "Female Member"
+        },
+        {
+          "name": "Priyanka Shivanath Kedare",
+          "dob": "24/03/1996",
+          "education": "SSC",
+          "mobile": "9822827919",
+          "position": "Member"
+        },
+        {
+          "name": "Roshan Balwant Suryavanshi",
+          "dob": "03/04/1988",
+          "education": "Agricultural Diploma",
+          "mobile": "8275586264",
+          "position": "Gram Panchayat Officer"
+        },
+        {
+          "name": "Sushil Rajendra Kedare",
+          "dob": "22/05/1987",
+          "education": "HSC",
+          "mobile": "8850366248",
+          "position": "Computer Operator"
+        },
+        {
+          "name": "Ganesh Kedu Pagar",
+          "dob": "27/09/1993",
+          "education": "HSC",
+          "mobile": "9764268193",
+          "position": "Clerk Vasuli Karkun"
+        },
+        {
+          "name": "Kailas Ramdas Pagar",
+          "dob": "28/12/1993",
+          "education": "HSC",
+          "mobile": "8805815671",
+          "position": "Gram Rojgar Sahayak"
+        },
+        {
+          "name": "Sahebrao Nivritti Kank",
+          "dob": "28/06/1986",
+          "education": "SSC",
+          "mobile": "8010045761",
+          "position": "Water Supply Employee"
+        }
       ]
     }
   },
   "directory": {
     "title": "Directory",
-    "membersDirectory": {
-      "title": "Members Directory",
-      "subtitle": "Gram Panchayat Members Information"
-    },
-    "schemes": {
-      "title": "Active Government Schemes",
-      "subtitle": "List of current schemes with benefits and descriptions"
-    },
-    "samiti": {
-      "title": "Committees (Samiti)",
-      "subtitle": "List of committees with member details"
-    },
-    "member": {
+    "pageTitle": "Who's Who",
+    "filterText": "Filter Who's Who divisions wise",
+    "filterButton": "Filter",
+    "noOfficialsFound": "No Officials Found",
+    "noOfficialsMessage": "Try adjusting your search terms or filter options.",
+    "tableHeaders": {
+      "name": "Name",
       "designation": "Designation",
-      "birthDate": "Birth Date",
-      "contact": "Contact",
-      "phone": "Phone",
-      "email": "Email"
+      "address": "Address"
     },
-    "scheme": {
-      "benefits": "Benefits",
-      "description": "Description",
-      "status": "Status",
-      "active": "Active",
-      "inactive": "Inactive"
+    "committees": {
+      "gramPanchayat": "Gram Panchayat Khadak Ozar - Local Administration",
+      "shaleySamiti": "Shaley Vyavasthapan Samiti - Year 2024/2025",
+      "janArogyaSamiti": "Jan Arogya Samiti (Public Health Committee) - Public Health Department, Nashik under Ayushman Bharat - Arogya Vardhini Sub-Center Khadak Ozar, Tal. Bandhav (Nashik)",
+      "executiveCommittee": "Executive Committee of Village Panchayat"
     },
-    "committee": {
-      "chairperson": "Chairperson",
-      "members": "Members",
-      "purpose": "Purpose"
+    "designations": {
+      "sarpanch": "Sarpanch (Head of Village Council)",
+      "deputySarpanch": "Deputy Sarpanch (Deputy Head of Village Council)",
+      "member": "Member",
+      "femaleMember": "Member (Female)",
+      "president": "President",
+      "vicePresident": "Vice President",
+      "secretary": "Secretary",
+      "tatSanchalak": "Tat Sanchalak",
+      "studentMember": "Student Member",
+      "specialInvitee": "Special Invitee",
+      "womanMember": "Woman Member",
+      "chairman": "Chairman (Gram Panch)",
+      "viceChairman": "Vice Chairman (Gram Panchayat Member)",
+      "healthWorker": "Secretary (Health Worker)",
+      "anganwadiSevika": "Member (Anganwadi Sevika)",
+      "anganwadiSevak": "Member (Anganwadi Sevak)",
+      "ashaMember": "Member ASHA (Water Supply Secretary)",
+      "charanGarbhAsha": "Member (Charan Garbh ASHA)",
+      "upSarpanch": "Member (Up-Sarpanch)",
+      "youthRepresentative": "Youth Representative",
+      "gramPanchayatOfficer": "Gram Panchayat Officer",
+      "computerOperator": "Computer Operator",
+      "clerkVasuliKarkun": "Clerk Vasuli Karkun",
+      "gramRojgarSahayak": "Gram Rojgar Sahayak",
+      "waterSupplyEmployee": "Water Supply Employee"
+    },
+    "members": {
+      "gramPanchayat": {
+        "sagarVasantraoPagar": "Sagar Vasantrao Pagar",
+        "govindTulshiramPagar": "Govind Tulshiram Pagar",
+        "harshadJanardanPagar": "Harshad Janardan Pagar",
+        "devidasTatyabaPagar": "Devidas Tatyaba Pagar",
+        "sharadRamchandraBhavar": "Sharad Ramchandra Bhavar",
+        "shivajiChindhuGhodhade": "Shivaji Chindhu Ghodhade",
+        "sarikaAshokPagar": "Sarika Ashok Pagar",
+        "ratnaAtmaramPagar": "Ratna Atmaram Pagar",
+        "sonaliSunilBhavar": "Sonali Sunil Bhavar",
+        "arunaKhanderaoPagar": "Aruna Khanderao Pagar",
+        "laxmibaiChahaduSuryawanshi": "Laxmibai Chahadu Suryawanshi",
+        "priyankaShivanathKedare": "Priyanka Shivanath Kedare"
+      },
+      "shaleySamiti": {
+        "ravindraRamnathPagar": "Shri Ravindra Ramnath Pagar",
+        "sharadKisanPagar": "Shri Sharad Kisan Pagar",
+        "namdevTukaramPagar": "Shri Namdev Tukaram Pagar",
+        "punjaramKoshinathSuryavanshi": "Shri Punjaram Koshinath Suryavanshi",
+        "chandrakantTulshiramPagar": "Shri Chandrakant Tulshiram Pagar",
+        "sopanTulshiramPagar": "Shri Sopan Tulshiram Pagar",
+        "nandkishorGangadharSaykar": "Shri Nandkishor Gangadhar Saykar",
+        "sukdevPrabhakarGhopade": "Shri Sukdev Prabhakar Ghopade",
+        "babajiBhimajiPagar": "Shri Babaji Bhimaji Pagar",
+        "hanumantMadhavPagar": "Shri Hanumant Madhav Pagar",
+        "ajayTrambakPagar": "Shri Ajay Trambak Pagar",
+        "shivajiGopalPagar": "Shri Shivaji Gopal Pagar",
+        "krishnaDinkarPagar": "Shri Krishna Dinkar Pagar",
+        "govindTulshiramPagar": "Shri Govind Tulshiram Pagar",
+        "sanjayMadhavraoChaute": "Shri Sanjay Madhavrao Chaute",
+        "aditikaGanpatSaykar": "Ku. Aditika Ganpat Saykar",
+        "sujataSiddharthKedar": "Ku. Sujata Siddharth Kedar",
+        "kalyaniSantoshSonawane": "Sau. Kalyani Santosh Sonawane"
+      },
+      "janArogyaSamiti": {
+        "nagnathRamnathPagar": "Shri Nagnath Ramnath Pagar",
+        "vijayKisanPagar": "Shri Vijay Kisan Pagar",
+        "ajayaShivajiGavit": "Dr. Ajaya Shivaji Gavit",
+        "shobhanaAnandaraoDeshmukh": "Smt. Shobhana Anandarao Deshmukh",
+        "gyaneshwarNavnathKale": "Shri Gyaneshwar Navnath Kale",
+        "mangalaBhausahebNagre": "Smt. Mangala Bhausaheb Nagre",
+        "manishaGanpatGirgaon": "Smt. Manisha Ganpat Girgaon",
+        "anjanaBandopantPagar": "Smt. Anjana Bandopant Pagar",
+        "ajayramBandopantMutha": "Shri Ajayram Bandopant Mutha",
+        "harindraNanabhaoPagar": "Shri Harindra Nanabhao Pagar",
+        "govindTulshiramPagar": "Shri Govind Tulshiram Pagar",
+        "navnathKenuPagar": "Shri Navnath Kenu Pagar"
+      },
+      "executiveCommittee": {
+        "roshanBalwantSuryavanshi": "Roshan Balwant Suryavanshi",
+        "sushilRajendraKedare": "Sushil Rajendra Kedare",
+        "ganeshKeduPagar": "Ganesh Kedu Pagar",
+        "kailasRamdasPagar": "Kailas Ramdas Pagar",
+        "sahebraoNivrittiKank": "Sahebrao Nivritti Kank"
+      }
     }
   },
   "notices": {
@@ -196,6 +509,116 @@
       "title": "Gram Panchayat Gallery",
       "altText": "Gallery Image"
     }
+  },
+  "events": {
+    "title": "Events",
+    "pageTitle": "Upcoming Events",
+    "description": "Stay updated with the latest events and activities in our village",
+    "noEvents": "No Events Found",
+    "noEventsMessage": "Check back later for upcoming events and activities.",
+    "viewDetails": "View Details",
+    "eventDate": "Event Date",
+    "eventLocation": "Location",
+    "eventTime": "Time",
+    "attendees": "Expected Attendees",
+    "eventDescription": "Description",
+    "close": "Close",
+    "officeHours": "Office Hours: Monday to Friday, 9:00 AM - 5:00 PM",
+    "phone": "Phone: +91-XXX-XXXXXXX",
+    "email": "Email: events@khadakozar.gov.in",
+    "gramPanchayatOffice": "Gram Panchayat Office",
+    "eventTimeRange": "10:00 AM - 5:00 PM",
+    "expectedAttendees": "100+ People"
+  },
+  "shaleySamiti": {
+    "title": "Shaley Vyavasthapan Samiti",
+    "pageTitle": "School Management Committee - Year 2024/2025",
+    "description": "The School Management Committee is responsible for overseeing the educational activities and development of schools in our village.",
+    "committeeInfo": "Committee Information",
+    "members": "Committee Members",
+    "responsibilities": "Responsibilities",
+    "responsibilitiesList": [
+      "Oversee school operations and educational activities",
+      "Ensure quality education for all students",
+      "Manage school infrastructure and facilities",
+      "Coordinate with teachers and staff",
+      "Organize educational programs and events",
+      "Monitor student progress and performance",
+      "Ensure proper utilization of government funds",
+      "Maintain school records and documentation"
+    ],
+    "additionalInfo": "This committee works closely with school administration, teachers, and parents to ensure the best educational outcomes for our children.",
+    "viewAllMembers": "View all members →",
+    "moreMembers": "more members"
+  },
+  "janArogyaSamiti": {
+    "title": "Jan Arogya Samiti",
+    "pageTitle": "Jan Arogya Samiti (Public Health Committee)",
+    "subtitle": "Public Health Department, Nashik under Ayushman Bharat - Arogya Vardhini Sub-Center Khadak Ozar, Tal. Bandhav (Nashik)",
+    "description": "The Jan Arogya Samiti is dedicated to improving public health and healthcare services in our village community.",
+    "committeeInfo": "Committee Information",
+    "members": "Committee Members",
+    "responsibilities": "Responsibilities",
+    "responsibilitiesList": [
+      "Promote health awareness and education in the community",
+      "Organize health camps and medical check-ups",
+      "Coordinate with healthcare providers and hospitals",
+      "Monitor public health programs and initiatives",
+      "Ensure access to healthcare services for all villagers",
+      "Maintain health records and documentation",
+      "Conduct health surveys and assessments",
+      "Facilitate emergency medical assistance",
+      "Promote maternal and child health programs",
+      "Organize vaccination drives and health campaigns"
+    ],
+    "healthServices": "Health Services",
+    "healthServicesList": [
+      "Primary healthcare consultations",
+      "Maternal and child health services",
+      "Immunization programs",
+      "Health education and awareness",
+      "Emergency medical assistance",
+      "Health monitoring and surveillance",
+      "Referral services to higher centers",
+      "Community health programs"
+    ],
+    "contactInfo": "Contact Information",
+    "officeHours": "Office Hours: Monday to Friday, 9:00 AM - 5:00 PM",
+    "phone": "Phone: +91-XXX-XXXXXXX",
+    "email": "Email: jan.arogya@khadakozar.gov.in",
+    "emergency": "Emergency: +91-XXX-XXXXXXX",
+    "additionalInfo": "This committee works under the Ayushman Bharat initiative to ensure comprehensive healthcare services for all community members.",
+    "viewAllMembers": "View all members →",
+    "moreMembers": "more members",
+    "healthTips": "Health Tips",
+    "healthTipsList": [
+      "Wash hands regularly",
+      "Maintain social distancing",
+      "Eat healthy and balanced diet",
+      "Exercise regularly",
+      "Get regular health check-ups"
+    ],
+    "officeHoursLabel": "Office Hours",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "emergencyLabel": "Emergency"
+  },
+  "rts": {
+    "title": "Right to Service (RTS)",
+    "subtitle": "Maharashtra Right To Service Act",
+    "description1": "The Maharashtra Right to Public Services Act, 2015 is enacted and is in force since 28.04.2015 to ensure that notified services are provided to the citizens in a transparent, speedy and time-bound manner by various Government Departments and Public Authorities under the Government. Its objective is to provide easy, prompt and time bound services to the citizens.",
+    "description2": "The Maharashtra State Commission for Right to Public Service has been constituted under the above Act to monitor, coordinate, control and improve the public services being provided by the Government. The Commission consists of a Chief Commissioner and six Commissioners. The headquarter of the Commission is at the New Administrative Building, Opposite Mantralaya, Mumbai and the Divisional Offices of the Commissioners are at the six Divisional Headquarters.",
+    "description3": "If any notified service is not provided to any eligible person within stipulated time or is rejected without proper grounds, the concerned person may file 1st and 2nd appeals with the higher authorities and if he is not satisfied with their decision, he may prefer third appeal to the Commission. The erring officer is liable for a penalty up to Rs 5000/- per case.",
+    "notifiedServices": "Notified Services under RTS:",
+    "services": [
+      "Birth registration certificate",
+      "Death certificate", 
+      "Marriage registration certificate",
+      "Below Poverty Line Certificate",
+      "No Dues Certificate",
+      "Old Age Certificate For Niradhar",
+      "Assessment certificate"
+    ]
   }
 }
 

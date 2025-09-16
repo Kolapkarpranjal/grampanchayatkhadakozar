@@ -22,7 +22,7 @@ interface LanguageProviderProps {
 }
 
 export default function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('mr');
 
   const value = {
     language,

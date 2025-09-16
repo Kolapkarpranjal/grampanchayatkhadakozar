@@ -9,7 +9,8 @@ import {
   TrendingUp,
   Eye,
   Plus,
-  Settings
+  Settings,
+  Shield
 } from "lucide-react";
 
 interface DashboardStats {
@@ -18,6 +19,7 @@ interface DashboardStats {
   events: number;
   members: number;
   notices: number;
+  rtsDocuments: number;
 }
 
 export default function AdminDashboard() {
@@ -26,7 +28,8 @@ export default function AdminDashboard() {
     gallery: 0,
     events: 0,
     members: 0,
-    notices: 0
+    notices: 0,
+    rtsDocuments: 0
   });
   const [loading, setLoading] = useState(true);
 
@@ -34,20 +37,22 @@ export default function AdminDashboard() {
     const fetchStats = async () => {
       try {
         // Fetch counts for each type
-        const [bannersRes, galleryRes, eventsRes, membersRes, noticesRes] = await Promise.all([
+        const [bannersRes, galleryRes, eventsRes, membersRes, noticesRes, rtsDocumentsRes] = await Promise.all([
           fetch('/api/images?type=banner'),
           fetch('/api/images?type=gallery'),
           fetch('/api/images?type=event'),
           fetch('/api/images?type=member'),
-          fetch('/api/notices')
+          fetch('/api/notices'),
+          fetch('/api/rts-documents')
         ]);
 
-        const [banners, gallery, events, members, notices] = await Promise.all([
+        const [banners, gallery, events, members, notices, rtsDocuments] = await Promise.all([
           bannersRes.json(),
           galleryRes.json(),
           eventsRes.json(),
           membersRes.json(),
-          noticesRes.json()
+          noticesRes.json(),
+          rtsDocumentsRes.json()
         ]);
 
         setStats({
@@ -55,7 +60,8 @@ export default function AdminDashboard() {
           gallery: gallery.length,
           events: events.length,
           members: members.length,
-          notices: notices.length
+          notices: notices.length,
+          rtsDocuments: rtsDocuments.length
         });
       } catch (error) {
         console.error('Error fetching stats:', error);
@@ -78,7 +84,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Content Management",
-      description: "Manage directory, notices & announcements",
+      description: "Manage directory, notices & RTS documents",
       href: "/admin/directory",
       icon: FileText,
       color: "bg-green-500",
@@ -129,6 +135,13 @@ export default function AdminDashboard() {
       icon: FileText,
       color: "text-yellow-600",
       bgColor: "bg-yellow-50"
+    },
+    {
+      title: "RTS Documents",
+      count: stats.rtsDocuments,
+      icon: Shield,
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50"
     }
   ];
 
@@ -141,7 +154,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
         {statCards.map((stat, index) => {
           const Icon = stat.icon;
           return (
@@ -210,7 +223,7 @@ export default function AdminDashboard() {
       {/* Quick Links */}
       <div>
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Links</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link
             href="/"
             target="_blank"
@@ -220,6 +233,16 @@ export default function AdminDashboard() {
             <div>
               <p className="font-medium text-gray-900">View Website</p>
               <p className="text-sm text-gray-600">Preview your website</p>
+            </div>
+          </Link>
+          <Link
+            href="/admin/rts-documents"
+            className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+          >
+            <Shield className="h-5 w-5 text-gray-600" />
+            <div>
+              <p className="font-medium text-gray-900">RTS Documents</p>
+              <p className="text-sm text-gray-600">Manage RTS forms & documents</p>
             </div>
           </Link>
           <Link

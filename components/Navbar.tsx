@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useParams, usePathname } from "next/navigation";
 
 // Import all locales
@@ -10,16 +10,12 @@ import mr from "../locales/mr/common.json";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [isSamitiOpen, setIsSamitiOpen] = useState(false);
   const params = useParams();
   const pathname = usePathname();
   
-  // Ensure client-side rendering to prevent hydration mismatch
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const lang = isClient ? (params?.lang as string || 'en') : 'en';
+  // Get language from params, default to 'mr' for consistency
+  const lang = (params?.lang as string) || 'mr';
 
   // Choose correct language JSON
   let t: any = en;
@@ -29,8 +25,6 @@ const Navbar = () => {
 
   // Function to generate language switch URL
   const getLanguageUrl = (newLang: string) => {
-    if (!isClient) return `/${newLang}`;
-    
     // Replace the current language in the pathname with the new language
     const pathSegments = pathname.split('/');
     
@@ -47,23 +41,26 @@ const Navbar = () => {
       {/* Top Strip with Language Options */}
       <div className="bg-gradient-to-r from-green-600 to-green-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          <div className="flex items-center gap-6">
+        <div className="relative max-w-7xl mx-auto flex justify-between items-center px-6 py-6">
+          <div className="flex items-center gap-8">
             <div className="relative">
-              <div className="h-16 md:h-20 w-16 md:w-20 rounded-lg shadow-lg border-2 border-white/20 bg-white/95 flex items-center justify-center overflow-hidden">
+              <div className="h-20 md:h-24 w-20 md:w-24 rounded-xl shadow-xl border-3 border-white/30 bg-white/95 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/images/logo.jpg" 
                   alt="Gram Panchayat Logo" 
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-xl"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/satyamavlogo.png';
+                  }}
                 />
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg blur opacity-30"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl blur opacity-40"></div>
             </div>
             <div>
-              <h1 className="text-lg md:text-xl font-bold leading-tight">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
                 Gram Panchayat Khadak Ozar
               </h1>
-              <p className="text-sm md:text-base font-medium opacity-90">Government of Maharashtra</p>
+              <p className="text-base md:text-lg font-medium opacity-90">Government of Maharashtra</p>
             </div>
           </div>
           
@@ -127,19 +124,54 @@ const Navbar = () => {
             </li>
             <li>
               <Link 
-                href={`/${lang}/schemes`} 
+                href={`/${lang}/events`} 
                 className="px-4 py-2 text-gray-700 hover:text-green-600 font-semibold transition-all duration-300 relative group rounded-lg hover:bg-white/80 hover:shadow-md"
               >
-                {t.schemes}
+                {t.events}
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-green-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
               </Link>
             </li>
+            <li className="relative group">
+              <button 
+                className="px-4 py-2 text-gray-700 hover:text-green-600 font-semibold transition-all duration-300 relative group rounded-lg hover:bg-white/80 hover:shadow-md flex items-center gap-1"
+                onMouseEnter={() => setIsSamitiOpen(true)}
+                onMouseLeave={() => setIsSamitiOpen(false)}
+              >
+                {t.samiti}
+                <ChevronDown className="w-4 h-4" />
+                <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-green-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+              </button>
+              <ul 
+                className={`absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 transition-all duration-300 ${
+                  isSamitiOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+                onMouseEnter={() => setIsSamitiOpen(true)}
+                onMouseLeave={() => setIsSamitiOpen(false)}
+              >
+                <li>
+                  <Link 
+                    href={`/${lang}/samiti/shaley-vyavasthapan`} 
+                    className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200"
+                  >
+                    {t.shaleySamiti}
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href={`/${lang}/samiti/jan-arogya`} 
+                    className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200"
+                  >
+                    {t.janArogyaSamiti}
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li>
               <Link 
-                href={`/${lang}/notices`} 
+                href={`/${lang}/gallery`} 
                 className="px-4 py-2 text-gray-700 hover:text-green-600 font-semibold transition-all duration-300 relative group rounded-lg hover:bg-white/80 hover:shadow-md"
               >
-                {t.notices}
+                {t.gallery}
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-green-500 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
               </Link>
             </li>
@@ -189,18 +221,37 @@ const Navbar = () => {
                 {t.directory}
               </Link>
               <Link 
-                href={`/${lang}/schemes`} 
+                href={`/${lang}/events`} 
                 className="block px-5 py-4 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-xl transition-all duration-300 font-semibold shadow-sm hover:shadow-md"
                 onClick={() => setIsOpen(false)}
               >
-                {t.schemes}
+                {t.events}
               </Link>
+              <div className="px-5 py-2">
+                <div className="text-sm font-semibold text-gray-500 mb-2">{t.samiti}</div>
+                <div className="ml-4 space-y-2">
+                  <Link 
+                    href={`/${lang}/samiti/shaley-vyavasthapan`} 
+                    className="block px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.shaleySamiti}
+                  </Link>
+                  <Link 
+                    href={`/${lang}/samiti/jan-arogya`} 
+                    className="block px-4 py-3 text-gray-600 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.janArogyaSamiti}
+                  </Link>
+                </div>
+              </div>
               <Link 
-                href={`/${lang}/notices`} 
+                href={`/${lang}/gallery`} 
                 className="block px-5 py-4 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-xl transition-all duration-300 font-semibold shadow-sm hover:shadow-md"
                 onClick={() => setIsOpen(false)}
               >
-                {t.notices}
+                {t.gallery}
               </Link>
               <Link 
                 href={`/${lang}/rts`} 

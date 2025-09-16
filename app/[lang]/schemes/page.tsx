@@ -25,7 +25,7 @@ import mr from "../../../locales/mr/common.json";
 
 export default function SchemesPage() {
   const params = useParams();
-  const lang = params?.lang as string;
+  const lang = params?.lang as string || 'mr';
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 

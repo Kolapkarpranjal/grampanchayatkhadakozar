@@ -2,25 +2,25 @@
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { 
-  Upload, 
   Download, 
   Eye, 
   Calendar, 
   FileText, 
   Image, 
   Search,
-  Filter,
-  Plus,
-  X
+  Filter
 } from "lucide-react";
 
 // Import all locales
 import en from "../../../locales/en/common.json";
 import mr from "../../../locales/mr/common.json";
 
+// Import static notices data
+import { getAllNotices, Notice } from "../../../components/data/notices";
+
 export default function NoticesPage() {
   const params = useParams();
-  const lang = params?.lang as string;
+  const lang = params?.lang as string || 'mr';
 
   // Choose correct language JSON
   let t: any = en;
@@ -32,64 +32,18 @@ export default function NoticesPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("recent");
   const [filterType, setFilterType] = useState("all");
-  const [showUploadModal, setShowUploadModal] = useState(false);
 
-  // State for notices from API
-  const [notices, setNotices] = useState<any[]>([]);
+  // State for notices from static data
+  const [notices, setNotices] = useState<Notice[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch notices from API
+  // Load static notices data
   useEffect(() => {
-    const fetchNotices = async () => {
-      try {
-        const response = await fetch('/api/notices');
-        const data = await response.json();
-        setNotices(data);
-      } catch (error) {
-        console.error('Error fetching notices:', error);
-        // Fallback to sample data if API fails
-        setNotices([
-          {
-            _id: "1",
-            title: "Gram Panchayat Election Schedule 2024",
-            description: "Official schedule for upcoming Gram Panchayat elections in Maharashtra",
-            type: "announcement",
-            publishDate: "2024-01-15",
-            expiryDate: "2024-03-15",
-            fileUrl: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            fileType: "pdf",
-            fileName: "election-schedule-2024.pdf"
-          },
-          {
-            _id: "2",
-            title: "Sample Notice Document",
-            description: "This is a sample notice for testing purposes",
-            type: "tender",
-            publishDate: "2024-01-10",
-            expiryDate: "2024-02-10",
-            fileUrl: "https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf",
-            fileType: "pdf",
-            fileName: "sample-notice.pdf"
-          },
-          {
-            _id: "3",
-            title: "Government Scheme Guidelines",
-            description: "Detailed guidelines for various government schemes available to citizens",
-            type: "circular",
-            publishDate: "2024-01-05",
-            expiryDate: "2024-12-31",
-            fileUrl: "https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf",
-            fileType: "pdf",
-            fileName: "scheme-guidelines.pdf"
-          }
-        ]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNotices();
-  }, []);
+    // Load static notices (for static export compatibility)
+    const staticNotices = getAllNotices(lang);
+    setNotices(staticNotices);
+    setLoading(false);
+  }, [lang]);
 
   // Filter and sort notices
   const filteredNotices = notices
@@ -110,59 +64,7 @@ export default function NoticesPage() {
       return 0;
     });
 
-  // Upload form state
-  const [uploadForm, setUploadForm] = useState({
-    title: "",
-    description: "",
-    type: "announcement",
-    publishDate: "",
-    expiryDate: "",
-    file: null as File | null
-  });
-
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setUploadForm({ ...uploadForm, file });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/notices', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: uploadForm.title,
-          description: uploadForm.description,
-          type: uploadForm.type,
-          publishDate: uploadForm.publishDate,
-          expiryDate: uploadForm.expiryDate,
-          fileName: uploadForm.file?.name || 'document.pdf',
-          fileType: uploadForm.file?.type.includes('pdf') ? 'pdf' : 'image',
-          fileUrl: URL.createObjectURL(uploadForm.file || new Blob())
-        })
-      });
-
-      if (response.ok) {
-        // Refresh notices list
-        const updatedNotices = await fetch('/api/notices').then(res => res.json());
-        setNotices(updatedNotices);
-        setShowUploadModal(false);
-        setUploadForm({
-          title: "",
-          description: "",
-          type: "announcement",
-          publishDate: "",
-          expiryDate: "",
-          file: null
-        });
-      }
-    } catch (error) {
-      console.error('Error uploading notice:', error);
-    }
-  };
+  // Note: Upload functionality removed for static export compatibility
 
   const getTypeColor = (type: string) => {
     switch (type) {
@@ -238,8 +140,7 @@ export default function NoticesPage() {
               <option value="order">{t.order}</option>
             </select>
 
-            {/* Upload Button */}
-          
+            {/* Upload functionality removed for static export */}
           </div>
         </div>
       </div>
@@ -253,7 +154,7 @@ export default function NoticesPage() {
           </div>
         ) : (
           filteredNotices.map((notice) => (
-            <div key={notice._id || notice.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+            <div key={notice._id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
@@ -350,134 +251,7 @@ export default function NoticesPage() {
         )}
       </div>
 
-      {/* Upload Modal */}
-      {showUploadModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-800">{t.uploadNotice}</h2>
-              <button
-                onClick={() => setShowUploadModal(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t.noticeTitle}
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={uploadForm.title}
-                  onChange={(e) => setUploadForm({ ...uploadForm, title: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t.noticeDescription}
-                </label>
-                <textarea
-                  required
-                  rows={3}
-                  value={uploadForm.description}
-                  onChange={(e) => setUploadForm({ ...uploadForm, description: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {t.type}
-                  </label>
-                  <select
-                    value={uploadForm.type}
-                    onChange={(e) => setUploadForm({ ...uploadForm, type: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                  >
-                    <option value="announcement">{t.announcement}</option>
-                    <option value="tender">{t.tender}</option>
-                    <option value="circular">{t.circular}</option>
-                    <option value="order">{t.order}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {t.fileType}
-                  </label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
-                    <option value="pdf">{t.pdf}</option>
-                    <option value="image">{t.image}</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {t.publishDate}
-                  </label>
-                  <input
-                    type="date"
-                    required
-                    value={uploadForm.publishDate}
-                    onChange={(e) => setUploadForm({ ...uploadForm, publishDate: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {t.expiryDate}
-                  </label>
-                  <input
-                    type="date"
-                    value={uploadForm.expiryDate}
-                    onChange={(e) => setUploadForm({ ...uploadForm, expiryDate: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t.selectFile}
-                </label>
-                <input
-                  type="file"
-                  required
-                  accept=".pdf,.jpg,.jpeg,.png"
-                  onChange={handleFileUpload}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              <div className="flex gap-3 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowUploadModal(false)}
-                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  {t.cancel}
-                </button>
-                <button
-                  type="submit"
-                  className="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  {t.submit}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      {/* Upload functionality removed for static export compatibility */}
     </div>
   );
 }

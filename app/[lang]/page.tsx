@@ -13,7 +13,7 @@ import mr from "../../locales/mr/common.json";
 
 export default function HomePage() {
   const params = useParams();
-  const lang = params?.lang as string;
+  const lang = params?.lang as string || 'mr';
 
   // Choose correct language JSON
   let t: any = en;
